@@ -7,7 +7,7 @@ const ActiveLink = ({to, children}) => {
                 to={to}
                 style={({ isActive }) => {
                     return {
-                    fontWeight: isActive ? "bold" : "",
+                    color: isActive ? "blue" : "",
                 }}}
             >
                 {children}
