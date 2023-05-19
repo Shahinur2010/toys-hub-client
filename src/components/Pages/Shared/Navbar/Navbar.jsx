@@ -22,11 +22,10 @@ const Navbar = () => {
             <div className="flex flex-col lg:flex-row gap-8 text-lg font-semibold">
                 <ActiveLink to='/'>Home</ActiveLink>
                 <ActiveLink to='/blogs'>Blogs</ActiveLink>
-                <ActiveLink to='/register'>Register</ActiveLink>
                 <ActiveLink to='/'></ActiveLink>
 
                 <div className="mt-5">
-                    <div className="tooltip" data-tip={user?.displayName}>
+                    <div className="tooltip flex flex-col lg:flex-row gap-2" data-tip={user?.displayName}>
                         <button className="btn bg-gray-300 border-none"><img className="w-10 rounded-full" src={user?.photoURL} /></button>
 
                         {user ? <>
