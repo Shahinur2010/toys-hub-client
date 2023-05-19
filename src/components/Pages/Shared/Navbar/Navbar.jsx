@@ -15,7 +15,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-gray-300 p-4 flex flex-col lg:flex-row">
+        <div className="navbar bg-neutral p-4 flex flex-col lg:flex-row text-white">
             <div className="flex-1">
                 <a className="btn btn-ghost normal-case text-3xl font-bold">Toys Hub</a>
             </div>
@@ -26,10 +26,10 @@ const Navbar = () => {
 
                 <div className="mt-5">
                     <div className="tooltip flex flex-col lg:flex-row gap-2" data-tip={user?.displayName}>
-                        <button className="btn bg-gray-300 border-none"><img className="w-10 rounded-full" src={user?.photoURL} /></button>
+                        <button className="btn"><img className="w-10 rounded-full" src={user?.photoURL} /></button>
 
                         {user ? <>
-                            <button onClick={handleLogOut} className="btn btn-primary">Sign Out</button></> : <ActiveLink to='/login'>Login</ActiveLink>
+                            <button onClick={handleLogOut} className="btn">Sign Out</button></> : <ActiveLink to='/login'>Login</ActiveLink>
                         }
                     </div>
                 </div>
