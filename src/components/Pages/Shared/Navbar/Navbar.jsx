@@ -16,13 +16,18 @@ const Navbar = () => {
 
     return (
         <div className="navbar bg-neutral p-4 flex flex-col lg:flex-row text-white">
+            <div>
+                <img className="rounded-full w-16 h-16" src="https://i.ibb.co/nzxWNqZ/research.jpg" alt="" />
+            </div>
             <div className="flex-1">
                 <a className="btn btn-ghost normal-case text-3xl font-bold">Toys Hub</a>
             </div>
             <div className="flex flex-col lg:flex-row gap-8 text-lg font-semibold">
                 <ActiveLink to='/'>Home</ActiveLink>
                 <ActiveLink to='/blogs'>Blogs</ActiveLink>
-                <ActiveLink to='/'></ActiveLink>
+                {user && <ActiveLink to='/all-toys'>All Toys</ActiveLink>}
+                {user && <ActiveLink to='/my-toys'>My Toys</ActiveLink>}
+                {user && <ActiveLink to='/add-a-toy'>Add a toy</ActiveLink>}
 
                 <div className="mt-5">
                     <div className="tooltip flex flex-col lg:flex-row gap-2" data-tip={user?.displayName}>
@@ -40,3 +45,11 @@ const Navbar = () => {
 
 
 export default Navbar;
+
+
+{/* <div className="absolute flex items-center rounded-xl bottom-0 h-full left-0 top-0">
+                    <div className='text-white space-y-7 w-1/2 pl-12'>
+                        <h2 className='text-6xl font-bold'>Outstanding Storage of Research Toys</h2>
+                        <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                    </div>
+                </div> */}

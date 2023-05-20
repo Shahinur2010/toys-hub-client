@@ -5,6 +5,13 @@ import Blogs from "../Pages/Blogs/Blogs";
 import Home from "../Pages/Home/Home/Home";
 import Register from "../Pages/Login/Register";
 import Login from "../Pages/Login/Login";
+import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
+import AllToys from "../Pages/AllToys/AllToys";
+import MyToys from "../Pages/MyToys/MyToys";
+import AddAToy from "../Pages/AddAToy/AddAToy";
+import PrivateRoute from "./PrivateRoutes";
+import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -17,15 +24,19 @@ const router = createBrowserRouter([
             },
             {
                 path: 'all-toys',
-                // element: <Home></Home>
+                element: <PrivateRoute><AllToys></AllToys></PrivateRoute>
             },
             {
                 path: 'my-toys',
-                // element: <Home></Home>
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
                 path: 'add-a-toy',
-                // element: <Home></Home>
+                element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+            },
+            {
+                path: 'view-details/:id',
+                element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
             },
             {
                 path: 'blogs',
@@ -38,6 +49,14 @@ const router = createBrowserRouter([
               {
                 path: '/register',
                 element: <Register></Register>
+              },
+              {
+                path: '/about',
+                element: <About></About>
+              },
+              {
+                path: '/contact',
+                element: <Contact></Contact>
               },
         ]
     },

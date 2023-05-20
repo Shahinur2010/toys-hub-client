@@ -10,13 +10,13 @@ const Gallery = () => {
     return (
         <div>
             <h2 className='font-bold text-3xl my-6 p-5 text-center'>Toys Gallery</h2>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mx-20'>
-                <img className='w-80 p-5' src={gimg1} alt="" />
-                <img className='w-80 p-5' src={gimg2} alt="" />
-                <img className='w-80 p-5' src={gimg3} alt="" />
-                <img className='w-80 p-5' src={gimg4} alt="" />
-                <img className='w-80 p-5' src={gimg5} alt="" />
-                <img className='w-80 p-5' src={gimg6} alt="" />
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 mx-20'>
+                <img className='w-80 h-64 rounded-lg p-2 bg-slate-300' src={gimg1} alt="" />
+                <img className='w-80 h-64 rounded-lg p-2 bg-slate-300' src={gimg2} alt="" />
+                <img className='w-80 h-64 rounded-lg p-2 bg-slate-300' src={gimg3} alt="" />
+                <img className='w-80 h-64 rounded-lg p-2 bg-slate-300' src={gimg4} alt="" />
+                <img className='w-80 h-64 rounded-lg p-2 bg-slate-300' src={gimg5} alt="" />
+                <img className='w-80 h-64 rounded-lg p-2 bg-slate-300' src={gimg6} alt="" />
             </div>
         </div>
     );
