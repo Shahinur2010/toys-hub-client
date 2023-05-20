@@ -1,11 +1,14 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../../../../Providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Category = ({ category }) => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const { _id, name, picture, price, rating } = category;
+    toast("Without a login, you can not visit the single toy details page!")
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -17,7 +20,7 @@ const Category = ({ category }) => {
                     <p>Price: ${price}</p>
                     <p>Rating: {rating}</p>
                     <div className="card-actions">
-                        <Link to={user ? `view-details/${_id}`: '/login'}>
+                        <Link to={user ? `view-details/${_id}` : '/login'}>
                             <button className="btn btn-primary">View Details</button>
                         </Link>
                     </div>

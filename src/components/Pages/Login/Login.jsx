@@ -10,8 +10,9 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation()
-    console.log('location from login page', location)
-    const from = location.state?.from?.pathname || '/';
+    // console.log('location from login page', location)
+    const from = location.state?.from?.pathname || "/"
+    console.log(from)
 
 
     const { signIn, signInWithGoogle, updateUser } = useContext(AuthContext);
@@ -43,6 +44,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 setSuccess('Login Successful')
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 setSuccess(error.message)
