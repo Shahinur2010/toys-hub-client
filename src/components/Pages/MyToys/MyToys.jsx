@@ -26,10 +26,16 @@ const MyToys = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
+                            <th>Picture</th>
+                            <th>Sub-Category</th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Available Quantity</th>
+                            <th>Price</th>
+                            <th>Detail Description</th>
+                            <th>Rating</th>
+                            <th>Update action</th>
+                            <th>Delete action</th>
+
                         </tr>
                     </thead>
                     <tbody>
