@@ -20,7 +20,7 @@ const Category = ({ category }) => {
                     <p>Price: ${price}</p>
                     <p>Rating: {rating}</p>
                     <div className="card-actions">
-                        <Link to={user ? `view-details/${_id}` : '/login'}>
+                        <Link to={user ? `/view-details/${_id}` : '/login'}>
                             <button className="btn btn-primary">View Details</button>
                         </Link>
                     </div>

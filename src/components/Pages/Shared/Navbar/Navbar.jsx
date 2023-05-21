@@ -27,7 +27,7 @@ const Navbar = () => {
                 <ActiveLink to='/blogs'>Blogs</ActiveLink>
                 {user && <ActiveLink to='/all-toys'>All Toys</ActiveLink>}
                 {user && <ActiveLink to='/my-toys'>My Toys</ActiveLink>}
-                {user && <ActiveLink to='/add-a-toy'>Add a toy</ActiveLink>}
+                {user && <ActiveLink to='/addToy'>Add a toy</ActiveLink>}
 
                 <div className="mt-5">
                     <div className="tooltip flex flex-col lg:flex-row gap-2" data-tip={user?.displayName}>
