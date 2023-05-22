@@ -31,7 +31,6 @@ const AddAToy = () => {
             detailDescription,
             subCategory
         }
-        console.log(addToy)
 
 
         fetch('http://localhost:5000/addToy', {
@@ -43,7 +42,6 @@ const AddAToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',

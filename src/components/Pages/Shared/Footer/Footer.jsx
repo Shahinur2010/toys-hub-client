@@ -5,8 +5,8 @@ import ExtraSection from "../../Home/ExtraSection/ExtraSection";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-neutral text-primary-content">
-            <div>
+        <footer className="footer footer-center p-2 bg-neutral text-primary-content">
+            <div className="mt-2 p-2">
                 <ExtraSection></ExtraSection>
                 <img className="w-20 h-20 rounded-full" src="https://i.ibb.co/nzxWNqZ/research.jpg" />
                 <p className="font-bold">
@@ -14,7 +14,7 @@ const Footer = () => {
                 </p>
                 <p>Copyright © 2023 - All right reserved</p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 my-0">
                     <Link to='/about' className="link link-hover">About us</Link>
                     <Link to='/contact' className="link link-hover">Contact</Link>
                 </div>

@@ -10,9 +10,7 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation()
-    // console.log('location from login page', location)
-    const from = location.state?.from?.pathname || "/"
-    console.log(from)
+    const from = location.state?.from?.pathname || "/";
 
 
     const { signIn, signInWithGoogle, updateUser } = useContext(AuthContext);
