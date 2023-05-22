@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AllToysRow = ({ loadedToy }) => {
     const {_id, price, availableQuantity, subCategory, rating, picture, name, seller, Email } = loadedToy;
+
+    const handleToast = () =>{
+        if(!user){
+            toast("You have to log in first to view details!")}
+    }
+
    
     return (
         <tr>
@@ -20,7 +28,8 @@ const AllToysRow = ({ loadedToy }) => {
             <td>{availableQuantity}</td>
             <td>{rating}</td>
             <th>
-                <Link to={`/view-details/${_id}`}><button className="btn btn-primary btn-xs">View Details</button></Link>
+                <Link onClick={handleToast} to={`/view-details/${_id}`}><button className="btn btn-primary btn-xs">View Details</button></Link>
+                <ToastContainer/>
             </th>
         </tr>
     );

@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import AllToysRow from './AllToysRow';
+import useTitle from '../../../Hooks/useTitle';
 
 const AllToys = () => {
     const allToys = useLoaderData();
     const { user } = useContext(AuthContext);
-    const [loadedToys, setLoadedToys] = useState([])
+    const [loadedToys, setLoadedToys] = useState([]);
+    useTitle('All Toys')
 
     useEffect(() => {
         fetch('http://localhost:5000/addToy')

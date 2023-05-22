@@ -3,10 +3,12 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import MyToysRow from './MyToysRow';
 import Swal from 'sweetalert2';
+import useTitle from '../../../Hooks/useTitle';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
+    useTitle('My Toys')
 
     const url = `http://localhost:5000/addToy?Email=${user?.email}`;
     useEffect(() => {
@@ -23,7 +25,6 @@ const MyToys = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.deletedCount > 0) {
                         Swal.fire({
                             title: 'Success!',
@@ -53,7 +54,7 @@ const MyToys = () => {
         const picture = form.picture.value;
 
         const updatedToy = { name, availableQuantity, price, rating, seller, Email, subCategory, detailDescription, picture }
-        console.log(updatedToy)
+     
 
         fetch(`http://localhost:5000/addToy/${id}`, {
             method: 'PUT',

@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const ViewDetails = () => {
     const toys = useLoaderData();
     const { name, price, picture, seller, sellerEmail, rating, availableQuantity, detailDescription } = toys;
     const {user} = useContext(AuthContext);
+    useTitle('View details')
+
     return (
         <div>
             <h2 className='text-center font-bold text-3xl my-4'>Single Toy Details Information</h2>

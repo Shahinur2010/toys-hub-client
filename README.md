@@ -1,10 +1,12 @@
 ## Live Site Link [Assignment-11](https://charming-melomakarona-3b374c.netlify.app/). ,
 
 ## Features
-
-- Food recipes of the particular Japanese chef's
-- server side created
-- View recipes button shows detail information of the particular recipe
+- Gallery section
+- Shop by category section
+- View details button shows detail information of the particular toy
+- All toys section
+- My toys section
+- Add a toy section
 - Private route used for ensuring loggedIn user
 - Login and Register form toggled
 - Firebase used for authentication

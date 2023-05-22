@@ -1,7 +1,7 @@
 import bnimg1 from '../../../../assets/images/banner/banner-img2.jpg';
 import bnimg2 from '../../../../assets/images/banner/banner-img1.jpg';
 import bnimg3 from '../../../../assets/images/banner/banner-img3.jpg';
-import bnimg4 from '../../../../assets/images/banner/banner-img4.jpg';
+import bnimg4 from '../../../../assets/images/banner/banner-img4.png';
 
 const Banner = () => {
     return (

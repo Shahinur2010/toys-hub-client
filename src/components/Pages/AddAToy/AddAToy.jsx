@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import useTitle from '../../../Hooks/useTitle';
 
 const AddAToy = () => {
 
     const { user } = useContext(AuthContext);
+    useTitle('Add A Toy')
 
     const handleAddToy = (e) => {
         e.preventDefault()
@@ -75,7 +77,11 @@ const AddAToy = () => {
                         <label className="label">
                             <span className="label-text">Sub-Category</span>
                         </label>
-                        <input type="text" name='subCategory' required placeholder="" className="input input-bordered" />
+                        <select className="input input-bordered" type="text" name='subCategory' required placeholder="">
+                            <option>Math Toys</option>
+                            <option>Engineering Toys</option>
+                            <option>Science Toys</option>
+                        </select>
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -114,7 +120,7 @@ const AddAToy = () => {
                         <input type="text" name='details' required placeholder="" className="input input-bordered" />
                     </div>
                 </div>
-                <button type='submit' className="btn btn-block my-4">Add Toy</button>
+                <button type='submit' className="btn btn-block bg-purple-500 my-4">Add Toy</button>
             </form>
         </div>
     );

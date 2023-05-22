@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="flex flex-col lg:flex-row gap-8 text-lg font-semibold">
                 <ActiveLink to='/'>Home</ActiveLink>
                 <ActiveLink to='/blogs'>Blogs</ActiveLink>
-                {user && <ActiveLink to='/all-toys'>All Toys</ActiveLink>}
+                <ActiveLink to='/all-toys'>All Toys</ActiveLink>
                 {user && <ActiveLink to='/my-toys'>My Toys</ActiveLink>}
                 {user && <ActiveLink to='/addToy'>Add a toy</ActiveLink>}
 

@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from "sweetalert2";
+import useTitle from '../../../Hooks/useTitle';
 
 const Update = () => {
     const toys = useLoaderData();
     const {_id, price, availableQuantity, detailDescription, name, rating, seller, Email, subCategory, picture } = toys;
     const {user} = useContext(AuthContext);
+    useTitle('Update')
 
     const handleUpdate = e => {
         e.preventDefault()
@@ -22,7 +24,6 @@ const Update = () => {
         const picture = form.picture.value;
 
         const updatedToy = {name, availableQuantity, price, picture, rating, seller, Email, subCategory, detailDescription }
-        console.log(updatedToy)
 
         fetch(`http://localhost:5000/addToy/${_id}`, {
             method: 'PUT',
@@ -33,7 +34,6 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
@@ -52,40 +52,45 @@ const Update = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mx-4 my-2'>
                     <div className="form-control">
                         <label className="label">
+                            <span className="label-text">Toy Name</span>
+                        </label>
+                        <input type="text" name='name' readOnly defaultValue={name} placeholder={name} className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
                             <span className="label-text">Price</span>
                         </label>
                         <input type="text" name='price' defaultValue={price} placeholder={price} className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Toy Name</span>
-                        </label>
-                        <input type="text" name='name' defaultValue={name} placeholder={name} className="input input-bordered" />
-                    </div><div className="form-control">
-                        <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
-                        <input type="text" name='rating' defaultValue={rating} placeholder={rating} className="input input-bordered" />
-                    </div><div className="form-control">
+                        <input type="text" name='rating' readOnly defaultValue={rating} placeholder={rating} className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text">Seller Name</span>
                         </label>
-                        <input type="text" name='seller' defaultValue={seller} placeholder={seller} className="input input-bordered" />
-                    </div><div className="form-control">
+                        <input type="text" name='seller' defaultValue={seller} placeholder={seller} readOnly className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="text" name='Email' defaultValue={Email} placeholder={Email} className="input input-bordered" />
-                    </div><div className="form-control">
+                        <input type="text" name='Email' readOnly defaultValue={Email} placeholder={Email} className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text">Sub-Category</span>
                         </label>
-                        <input type="text" name='subCategory' defaultValue={subCategory} placeholder={subCategory} className="input input-bordered" />
-                    </div><div className="form-control">
+                        <input type="text" name='subCategory' readOnly defaultValue={subCategory} placeholder={subCategory} className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
                         <label className="label">
                             <span className="label-text">Picture</span>
                         </label>
-                        <input type="text" name='picture' defaultValue={picture} placeholder={picture} className="input input-bordered" />
+                        <input type="text" name='picture' readOnly defaultValue={picture} placeholder={picture} className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -100,7 +105,7 @@ const Update = () => {
                         <input type="text" name='detailDescription' defaultValue={detailDescription} placeholder={detailDescription} className="input input-bordered" />
                     </div>
                 </div>
-                <input type="submit" value="Update Toy" className="btn btn-block my-4" />
+                <input type="submit" value="Update Toy" className="btn btn-block bg-purple-500 my-4" />
             </form>
         </div>
     );

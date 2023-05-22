@@ -8,7 +8,7 @@ import ShopByCategory from "../ShopByCategory/ShopByCategory";
 const Home = () => {
     useTitle('Home')
     return (
-        <div>
+        <div className="mx-auto">
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
