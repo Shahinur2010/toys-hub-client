@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Category from './Category/Category';
 import useTitle from '../../../../Hooks/useTitle';
+import './Shop/ShopByCategory.css'
 
 const ShopByCategory = () => {
 

@@ -8,6 +8,7 @@ const AllToys = () => {
     const allToys = useLoaderData();
     const { user } = useContext(AuthContext);
     const [loadedToys, setLoadedToys] = useState([]);
+    const [searchText, setSearchText] = useState("");
     useTitle('All Toys')
 
     useEffect(() => {
@@ -15,9 +16,23 @@ const AllToys = () => {
             .then(res => res.json())
             .then(data => setLoadedToys(data))
     }, [])
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/getToysByText/${searchText}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setLoadedToys(data);
+          });
+      };
+
     return (
         <div>
-            <h2 className='text-center font-bold text-3xl my-4'>Toys World: {loadedToys.length}</h2>
+                <h2 className='text-center font-bold text-3xl my-4'>Toys World: {loadedToys.length}</h2>
+                <div className='text-center'>
+                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search Toy Name" className="input input-bordered w-full max-w-xs my-4 mx-auto" />{" "}
+                <button onClick={handleSearch} className="btn btn-active btn-ghost ms-2 pt-4 pb-2">Search</button>
+            </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -35,7 +50,7 @@ const AllToys = () => {
                     </thead>
                     <tbody className='text-center'>
                         {
-                            loadedToys.map(loadedToy=> <AllToysRow key={loadedToy._id} loadedToy={loadedToy}></AllToysRow>)
+                            loadedToys.map(loadedToy => <AllToysRow key={loadedToy._id} loadedToy={loadedToy}></AllToysRow>)
                         }
                     </tbody>
                 </table>

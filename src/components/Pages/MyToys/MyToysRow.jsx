@@ -1,10 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const MyToysRow = ({ myToy, handleDelete, handleUpdate }) => {
-    const { _id, price, availableQuantity, detailDescription, subCategory, rating, picture, name, status } = myToy;
+const MyToysRow = ({ myToy, handleDelete }) => {
+    const { _id, price, availableQuantity, detailDescription, subCategory, rating, picture, name } = myToy;
    
 
     return (

@@ -1,0 +1,26 @@
+.tab-container {
+    width: 100%;
+  }
+  
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .tab {
+      width: auto;
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+  

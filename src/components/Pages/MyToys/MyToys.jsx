@@ -77,7 +77,6 @@ const MyToys = () => {
             })
     }
 
-
     return (
         <div>
             <h2 className='text-center font-bold text-3xl my-4'>All of My Toys Present Here: {myToys.length}</h2>
