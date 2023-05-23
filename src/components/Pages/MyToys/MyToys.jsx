@@ -10,7 +10,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
     useTitle('My Toys')
 
-    const url = `http://localhost:5000/addToy?Email=${user?.email}`;
+    const url = `https://assignment-11-nine.vercel.app/addToy?Email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const MyToys = () => {
     const handleDelete = id => {
         const proceed = confirm('Are you want to delete!');
         if (proceed) {
-            fetch(`http://localhost:5000/addToy/${id}`, {
+            fetch(`https://assignment-11-nine.vercel.app/addToy/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -56,7 +56,7 @@ const MyToys = () => {
         const updatedToy = { name, availableQuantity, price, rating, seller, Email, subCategory, detailDescription, picture }
      
 
-        fetch(`http://localhost:5000/addToy/${id}`, {
+        fetch(`https://assignment-11-nine.vercel.app/addToy/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

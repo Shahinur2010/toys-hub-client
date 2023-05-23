@@ -12,7 +12,7 @@ const ShopByCategory = () => {
     useTitle('Shop by category')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/${activeTab}`)
+        fetch(`https://assignment-11-nine.vercel.app/toys/${activeTab}`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [activeTab])
